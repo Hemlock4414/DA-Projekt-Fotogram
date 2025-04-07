@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <link rel="shortcut icon" href="./img/icons/favicon.png">
+    <title>Fotogram</title>
+</head>
+<body onload="renderImages()">
+
+    <header>
+            <a href="./index.html">
+                <img src="./img/icons/Fotogram_Logo.svg" alt="Logo" class="header-logo">
+            </a>
+    </header>
+
+    <main>
+
+        <!-- Tab links -->
+        <div class="tab">
+            <button class="tablinks" onclick="openAnimals(event, 'show-all')" id="default-open">Alle</button>
+            <button class="tablinks" onclick="openAnimals(event, 'mammals')">Säugetiere</button>
+            <button class="tablinks" onclick="openAnimals(event, 'birds')">Vögel</button>
+            <button class="tablinks" onclick="openAnimals(event, 'reptiles')">Reptilien</button>
+            <button class="tablinks" onclick="openAnimals(event, 'amphibians')">Amphibien</button>
+        </div>
+        
+        <!-- Tab content -->
+        <div id="show-all" class="tabcontent">
+            
+        </div>
+        
+        <div id="mammals" class="tabcontent">
+            <h3>Säugetiere</h3>
+            <p>London is the capital city of England.</p>
+        </div>
+        
+        <div id="birds" class="tabcontent">
+            <h3>Vögel</h3>
+        </div>
+        
+        <div id="reptiles" class="tabcontent">
+            <h3>Reptilien</h3>
+        </div>
+
+        <div id="amphibians" class="tabcontent">
+            <h3>Amphibien</h3>
+        </div>
+
+
+    </main>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-left">
+                <a href="./index.html">
+                    <img src="./img/icons/Fotogram_Logo.svg" alt="Logo" class="footer-logo">
+                </a>
+            </div>
+            <div class="footer-right">
+                <a href="./impressum.html" class="footer-link">Impressum</a>
+                <a href="./datenschutz.html" class="footer-link">Datenschutz</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    
+</body>
+</html>

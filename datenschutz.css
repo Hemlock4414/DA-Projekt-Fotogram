@@ -1,0 +1,144 @@
+* {
+    box-sizing: border-box;
+    margin: 0; 
+    padding:0;
+}
+
+html, body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* header */
+
+header {
+    background-color: rgb(8, 8, 161);
+    height: 120px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.header-logo {
+    width: 350px;
+    height: auto;
+}
+
+/* main */
+
+main {
+    flex: 1; 
+    padding: 30px 50px;
+}
+
+h1 {
+    margin: 21.44px 0;
+}
+
+h2 {
+    margin: 
+    19.92px 0;
+}
+
+h3 {
+    margin: 18.72px 0;
+}
+
+p {
+    font-size: 18px;
+    margin: 16px 0;
+}
+
+li {
+    font-size: 18px;
+}
+
+/* footer */
+
+footer {
+    margin-top: auto;
+    background-color: rgb(8, 8, 161);
+    display: flex;
+    min-height: 80px;
+    justify-content: center;
+}
+
+.footer-container {
+    max-width: 1440px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 0 25px;
+}
+
+.footer-left {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.footer-logo {
+    width: 200px;
+    height: auto;
+}
+
+.footer-right {
+    display: flex;
+    justify-content: flex-end;
+    gap: 5px;
+}
+
+.footer-link {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    border: 1px solid transparent;
+    border-radius: 5px;
+    padding: 0.75rem 1rem;
+}
+
+.footer-link:hover {
+    border: 1px solid white;
+    color: rgb(8, 8, 161);
+    background-color: white;
+}
+
+
+@media (max-width: 500px) {
+    .header-logo {
+        width: 250px;
+    }
+    main {
+        padding: 20px 20px;
+    }
+    h1 {
+        font-size: 28px;
+    }
+    p {
+        font-size: 16px;
+    }
+    li {
+        font-size: 16px;
+    }
+    .footer-container {
+        flex-direction: column-reverse;
+        padding: 20px 0;
+        gap: 20px;
+    }
+    .footer-right {
+        gap: 40px;
+    }
+    .footer-link {
+        font-size: 16px;
+        padding: 0.75rem 1rem;
+        border: 1px solid transparent;
+        border-radius: 5px;
+    }
+    .footer-link:hover {
+        border: 1px solid white;
+        color: white;
+        background-color: rgb(8, 8, 161);
+    }
+}

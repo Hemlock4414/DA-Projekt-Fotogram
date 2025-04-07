@@ -1,0 +1,168 @@
+* {
+    box-sizing: border-box;
+    margin: 0; 
+    padding:0;
+}
+
+html, body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* header */
+
+header {
+    background-color: rgb(8, 8, 161);
+    height: 120px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.header-logo {
+    width: 350px;
+    height: auto;
+}
+
+/* main */
+
+main {
+    flex: 1; 
+    padding: 50px 80px;
+}
+
+/* Style the tab */
+.tab {
+    overflow: hidden;
+    border: 1px solid #ccc;
+    background-color: #f1f1f1;
+    width: fit-content;
+}
+
+/* Style the buttons that are used to open the tab content */
+.tab button {
+    background-color: inherit;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    transition: 0.3s;
+    font-size: 16px;
+}
+
+.tab button:hover {
+    background-color: #ddd;
+}
+
+.tab button.active {
+    background-color: #ccc;
+    font-weight: bold;
+}
+
+.tabcontent {
+    display: none;
+    padding: 6px 12px;
+    border: 1px solid #ccc;
+    border-radius: 0 8px 8px 8px;
+    max-width: 1300px;
+}
+
+/* Wenn der Tab aktiv ist, ändern wir auf flex mit Abständen */
+.tabcontent.active {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+.tabcontent img {
+    width: 300px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin: 10px 5px;
+    transition: transform 0.2s ease-in-out;
+}
+
+.tabcontent img:hover {
+    transform: scale(1.11);
+    cursor: pointer;
+}
+
+/* footer */
+
+footer {
+    margin-top: auto;
+    background-color: rgb(8, 8, 161);
+    display: flex;
+    min-height: 80px;
+    justify-content: center;
+}
+
+.footer-container {
+    max-width: 1440px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 0 25px;
+}
+
+.footer-left {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.footer-logo {
+    width: 200px;
+    height: auto;
+}
+
+.footer-right {
+    display: flex;
+    justify-content: flex-end;
+    gap: 5px;
+}
+
+.footer-link {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    border: 1px solid transparent;
+    border-radius: 5px;
+    padding: 0.75rem 1rem;
+}
+
+.footer-link:hover {
+    border: 1px solid white;
+    color: rgb(8, 8, 161);
+    background-color: white;
+}
+
+
+@media (max-width: 500px) {
+    .header-logo {
+        width: 250px;
+    }
+    .footer-container {
+        flex-direction: column-reverse;
+        padding: 20px 0;
+        gap: 20px;
+    }
+    .footer-right {
+        gap: 40px;
+    }
+    .footer-link {
+        font-size: 16px;
+        padding: 0.75rem 1rem;
+        border: 1px solid transparent;
+        border-radius: 5px;
+    }
+    .footer-link:hover {
+        border: 1px solid white;
+        color: white;
+        background-color: rgb(8, 8, 161);
+    }
+}
