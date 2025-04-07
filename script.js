@@ -1,20 +1,20 @@
 let imagesAll = [
-    "./img/reptile_snake_1280.jpg",
-    "./img/bird_parrot_1280.jpg",
-    "./img/amphibian_frog_1280.jpg",
-    "./img/mammal_elephant_1280.jpg",
-    "./img/amphibian_salamander_1280.jpg",
-    "./img/reptile_lizard_1280.jpg",
-    "./img/amphibian_toad_1280.jpg",
-    "./img/bird_eagle_1280.jpg",
-    "./img/mammal_cat_1280.jpg",
-    "./img/bird_owl_1280.jpg",
-    "./img/mammal_lion_1280.jpg",
-    "./img/bird_pinguin_1280.jpg",
-    "./img/mammal_dolphin_1280.jpg",
-    "./img/reptile_crocodile_1280.jpg", 
-    "./img/amphibian_axolotl_1280.jpg",
-    "./img/reptile_tortoise_1280.jpg"
+  "./img/reptile_snake_1280.jpg",
+  "./img/bird_parrot_1280.jpg",
+  "./img/amphibian_frog_1280.jpg",
+  "./img/mammal_elephant_1280.jpg",
+  "./img/amphibian_salamander_1280.jpg",
+  "./img/reptile_lizard_1280.jpg",
+  "./img/amphibian_toad_1280.jpg",
+  "./img/bird_eagle_1280.jpg",
+  "./img/mammal_cat_1280.jpg",
+  "./img/bird_owl_1280.jpg",
+  "./img/mammal_lion_1280.jpg",
+  "./img/bird_pinguin_1280.jpg",
+  "./img/mammal_dolphin_1280.jpg",
+  "./img/reptile_crocodile_1280.jpg", 
+  "./img/amphibian_axolotl_1280.jpg",
+  "./img/reptile_tortoise_1280.jpg"
 ];
 
 let imagesMammals = [
@@ -47,9 +47,6 @@ let imagesAmphibians = [
 
 let currentImages = [];
 let currentDescriptions = [];
-
-// Get the element with id="defaultOpen" and click on it
-document.getElementById("default-open").click();
 
 function renderFiltered(event, index) {
 
