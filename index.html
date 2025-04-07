@@ -7,8 +7,8 @@
     <link rel="shortcut icon" href="./img/icons/favicon.png">
     <title>Fotogram</title>
 </head>
-<body onload="renderImages()">
-
+<body onload="document.getElementById('default-open').click()">
+    
     <header>
             <a href="./index.html">
                 <img src="./img/icons/Fotogram_Logo.svg" alt="Logo" class="header-logo">
@@ -19,35 +19,15 @@
 
         <!-- Tab links -->
         <div class="tab">
-            <button class="tablinks" onclick="openAnimals(event, 'show-all')" id="default-open">Alle</button>
-            <button class="tablinks" onclick="openAnimals(event, 'mammals')">Säugetiere</button>
-            <button class="tablinks" onclick="openAnimals(event, 'birds')">Vögel</button>
-            <button class="tablinks" onclick="openAnimals(event, 'reptiles')">Reptilien</button>
-            <button class="tablinks" onclick="openAnimals(event, 'amphibians')">Amphibien</button>
+            <button class="tablinks" onclick="renderFiltered(event, 'show-all')" id="default-open">Alle</button>
+            <button class="tablinks" onclick="renderFiltered(event, 'mammals')">Säugetiere</button>
+            <button class="tablinks" onclick="renderFiltered(event, 'birds')">Vögel</button>
+            <button class="tablinks" onclick="renderFiltered(event, 'reptiles')">Reptilien</button>
+            <button class="tablinks" onclick="renderFiltered(event, 'amphibians')">Amphibien</button>
         </div>
         
         <!-- Tab content -->
-        <div id="show-all" class="tabcontent">
-            
-        </div>
-        
-        <div id="mammals" class="tabcontent">
-            <h3>Säugetiere</h3>
-            <p>London is the capital city of England.</p>
-        </div>
-        
-        <div id="birds" class="tabcontent">
-            <h3>Vögel</h3>
-        </div>
-        
-        <div id="reptiles" class="tabcontent">
-            <h3>Reptilien</h3>
-        </div>
-
-        <div id="amphibians" class="tabcontent">
-            <h3>Amphibien</h3>
-        </div>
-
+        <div id="tabcontent" class="tabcontent"></div>
 
     </main>
 
