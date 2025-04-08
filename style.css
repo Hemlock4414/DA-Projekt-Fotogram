@@ -62,7 +62,7 @@ header {
 
 main {
     flex: 1; 
-    padding: 50px 80px;
+    padding: 50px 80px 50px 80px;
 }
 
 .tab {
@@ -70,6 +70,8 @@ main {
     border: 1px solid #ccc;
     background-color: #f1f1f1;
     width: fit-content;
+    border-radius: 8px 8px 0 0;
+    display: flex;
 }
 
 .tab button {
@@ -172,10 +174,86 @@ footer {
     background-color: white;
 }
 
+@media (max-width: 1024px) {
+    main {
+        padding: 50px 30px 50px 30px;
+    }
+}
 
-@media (max-width: 500px) {
+@media (max-width: 530px) {
     .header-logo {
         width: 250px;
+    }
+    main {
+        padding: 30px 10px 50px 10px;
+    }
+    .tab {
+        overflow: visible;
+
+    }
+    .tabcontent {
+        border-radius: 0 8px 8px 8px;
+    }
+    .tabcontent img {
+        width: 100%;
+        max-width: 400px;
+        height: auto;
+        aspect-ratio: 3 / 2;
+        object-fit: cover;
+        margin: 10px 0px;
+    }
+    .tabcontent img:hover {
+        transform: scale(1.05);
+    }
+    /* Alle Tabs */
+    .tab button {
+        position: relative;
+        float: none;
+        width: 50px;
+        height: 50px;
+        padding: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    /* Emoji-Klassen für die Tabs */
+    .tab button[onclick*="show-all"]::before {
+        content: "🌍";
+        font-size: 24px;
+    }
+    .tab button[onclick*="mammals"]::before {
+        content: "🐻";
+        font-size: 24px;
+    }
+    .tab button[onclick*="birds"]::before {
+        content: "🦜";
+        font-size: 24px;
+    }
+    .tab button[onclick*="reptiles"]::before {
+        content: "🦎";
+        font-size: 24px;
+    }
+    .tab button[onclick*="amphibians"]::before {
+        content: "🐸";
+        font-size: 24px;
+    }
+    .tab button:hover::after {
+        content: attr(data-tooltip);
+        position: absolute;
+        bottom: 100%; /* oberhalb vom Button */
+        left: 50%;
+        transform: translateX(-50%);
+        background-color: #333;
+        color: white;
+        padding: 5px 10px;
+        border-radius: 4px;
+        white-space: nowrap;
+        font-size: 16px;
+        z-index: 1;
+    }
+    /* Ausblenden des ursprünglichen Textes */
+    .tab button span {
+        display: none;
     }
     .footer-container {
         flex-direction: column-reverse;
@@ -195,5 +273,17 @@ footer {
         border: 1px solid white;
         color: white;
         background-color: rgb(8, 8, 161);
+    }
+}
+
+@media (max-width: 375px) {
+    main {
+        padding: 30px 5px 20px 5px;
+    }
+    .tabcontent {
+        padding: 3px 5px;
+    }
+    .tabcontent img {
+        margin: 5px 0px;
     }
 }

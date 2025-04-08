@@ -18,11 +18,11 @@
     <main>
 
         <div class="tab">
-            <button class="tablinks" onclick="renderFiltered(event, 'show-all')" id="default-open">Alle</button>
-            <button class="tablinks" onclick="renderFiltered(event, 'mammals')">Säugetiere</button>
-            <button class="tablinks" onclick="renderFiltered(event, 'birds')">Vögel</button>
-            <button class="tablinks" onclick="renderFiltered(event, 'reptiles')">Reptilien</button>
-            <button class="tablinks" onclick="renderFiltered(event, 'amphibians')">Amphibien</button>
+            <button class="tablinks" onclick="renderFiltered(event, 'show-all')" id="default-open" data-tooltip="Alle"><span>Alle</span></button>
+            <button class="tablinks" onclick="renderFiltered(event, 'mammals')" data-tooltip="Säugetiere"><span>Säugetiere</span></button>
+            <button class="tablinks" onclick="renderFiltered(event, 'birds')" data-tooltip="Vögel"><span>Vögel</span></button>
+            <button class="tablinks" onclick="renderFiltered(event, 'reptiles')" data-tooltip="Reptilien"><span>Reptilien</span></button>
+            <button class="tablinks" onclick="renderFiltered(event, 'amphibians')" data-tooltip="Amphibien"><span>Amphibien</span></button>
         </div>
         
         <div id="tabcontent" class="tabcontent"></div>
