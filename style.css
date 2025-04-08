@@ -189,7 +189,6 @@ footer {
     }
     .tab {
         overflow: visible;
-
     }
     .tabcontent {
         border-radius: 0 8px 8px 8px;
@@ -279,6 +278,38 @@ footer {
 @media (max-width: 375px) {
     main {
         padding: 30px 5px 20px 5px;
+    }
+    .tab {
+        border-radius: 0 8px 8px 0;
+        display: flex;
+        flex-direction: column;
+        z-index: 1;
+        position: fixed;
+        left: 0;
+        overflow: hidden;
+    }
+    .tab button {
+        width: 60px;
+        height: 60px;
+    }
+    .tab button:hover::after {
+        content: none;
+        display: none;
+    }
+    .tab button[onclick*="show-all"]::before {
+        font-size: 32px;
+    }
+    .tab button[onclick*="mammals"]::before {
+        font-size: 32px;
+    }
+    .tab button[onclick*="birds"]::before {
+        font-size: 32px;
+    }
+    .tab button[onclick*="reptiles"]::before {
+        font-size: 32px;
+    }
+    .tab button[onclick*="amphibians"]::before {
+        font-size: 32px;
     }
     .tabcontent {
         padding: 3px 5px;
