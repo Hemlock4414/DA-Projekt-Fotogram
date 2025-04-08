@@ -6,7 +6,7 @@
 
 body {
     --sb-track-color: #696d7d;
-    --sb-thumb-color: #8bbeb2;
+    --sb-thumb-color: #79aea2;
     --sb-size: 14px;
 }
   
@@ -16,13 +16,18 @@ body::-webkit-scrollbar {
   
 body::-webkit-scrollbar-track {
     background: var(--sb-track-color);
-    border-radius: 9px;
+    border-radius: 0px;
 }
 
 body::-webkit-scrollbar-thumb {
     background: var(--sb-thumb-color);
     border-radius: 9px;
     border: 1px solid #b1740f;
+}
+
+body::-webkit-scrollbar-thumb:hover {
+    background: #8bbeb2;
+    border-color: #bd7e17;
 }
   
 @supports not selector(::-webkit-scrollbar) {
@@ -60,7 +65,6 @@ main {
     padding: 50px 80px;
 }
 
-/* Style the tab */
 .tab {
     overflow: hidden;
     border: 1px solid #ccc;
@@ -68,7 +72,6 @@ main {
     width: fit-content;
 }
 
-/* Style the buttons that are used to open the tab content */
 .tab button {
     background-color: inherit;
     float: left;
