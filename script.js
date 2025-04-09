@@ -122,9 +122,13 @@ function getOverlayTemplate(imageIndex) {
       </div>
       <img class="overlay-image" src="${currentImages[imageIndex]}">
       <div class="overlay-navigation" onclick="noPropagation(event)">
-        <button class="nav-btn prev-btn" onclick="navigateImage(-1)">←</button>
+        <button class="nav-btn prev-btn" onclick="navigateImage(-1)">
+          <img src="./img/icons/arrow_left_back.svg" alt="Zurück">
+        </button>
         <div class="image-counter">${imageIndex + 1} / ${currentImages.length}</div>
-        <button class="nav-btn next-btn" onclick="navigateImage(1)">→</button>
+        <button class="nav-btn next-btn" onclick="navigateImage(1)">
+          <img src="./img/icons/arrow_right_next.svg" alt="Vor">
+        </button>
       </div>
     </div>
   `;
