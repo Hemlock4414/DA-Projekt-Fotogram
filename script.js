@@ -45,6 +45,8 @@ let imagesAmphibians = [
   "./img/amphibian_axolotl_1280.jpg",
 ];
 
+
+
 let currentImages = [];
 let currentDescriptions = [];
 
@@ -89,16 +91,35 @@ function renderImages() {
 }
 
 function createImageTemplate(imageIndex) {
-  return  `<img onclick="openImage(${imageIndex})" src="${currentImages[imageIndex]}">`;
+  return  `<img onclick="openOverlay(${imageIndex})" src="${currentImages[imageIndex]}">`;
 }
 
-// function renderImagesOverlay() {
-//   let contentRef = document.getElementById('tabcontent');
-//   contentRef.innerHTML = "";
-//   for (let index = 0 ; index < currentDescriptions.length; index++) {
-//     contentRef.innerHTML += getNoteTemplate(index, currentDescriptions, currentImages);
-//   }
-// }
+function toggleOverlay() {
+  let overlayRef = document.getElementById('overlay')
+
+  overlayRef.classList.toggle('d-none')
+}
+
+function openOverlay(imageIndex) {
+  // Hole das Overlay-Element
+  let overlayRef = document.getElementById('overlay');
+  
+  // Füge das große Bild zum Overlay hinzu, indem die neue Funktion aufgerufen wird
+  overlayRef.innerHTML = getOverlayTemplate(imageIndex);
+  
+  // Zeige das Overlay an
+  overlayRef.classList.remove('d-none');
+}
+
+function getOverlayTemplate(imageIndex) {
+  return `
+    <div class="overlay-content">
+      <img class="overlay-image" src="${currentImages[imageIndex]}">
+    </div>
+  `;
+}
+
+
 
 
 
