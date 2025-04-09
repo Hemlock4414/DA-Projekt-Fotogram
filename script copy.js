@@ -53,6 +53,7 @@ let currentImageIndex = 0;
 
 function renderFiltered(event, index) {
 
+  // Setze alle Buttons zurück und aktiviere den aktuellen
     let tablinks = document.getElementsByClassName("tablinks");
     for (let i = 0; i < tablinks.length; i++) {
       tablinks[i].className = tablinks[i].className.replace(" active", "");
@@ -81,6 +82,7 @@ function renderImages() {
   let imageTabContent = document.getElementById('tabcontent');
   imageTabContent.innerHTML = "";
 
+    // Aktiviere die Anzeige des Content-Bereichs
     imageTabContent.style.display = "flex";
     imageTabContent.classList.add("active");
 
@@ -99,13 +101,16 @@ function toggleOverlay() {
 }
 
 function openOverlay(imageIndex) {
-
+  // Setze den aktuellen Bildindex
   currentImageIndex = imageIndex;
   
+  // Hole das Overlay-Element
   let overlayRef = document.getElementById('overlay');
   
+  // Füge das große Bild zum Overlay hinzu
   overlayRef.innerHTML = getOverlayTemplate(currentImageIndex);
   
+  // Zeige das Overlay an
   overlayRef.classList.remove('d-none');
 }
 
@@ -130,8 +135,10 @@ function getOverlayTemplate(imageIndex) {
 }
 
 function navigateImage(direction) {
+  // Berechne den neuen Index (mit Überprüfung der Grenzen)
   currentImageIndex = (currentImageIndex + direction + currentImages.length) % currentImages.length;
   
+  // Aktualisiere den Overlay-Inhalt
   let overlayRef = document.getElementById('overlay');
   overlayRef.innerHTML = getOverlayTemplate(currentImageIndex);
 }

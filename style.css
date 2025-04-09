@@ -8,6 +8,7 @@ body {
     --sb-track-color: #696d7d;
     --sb-thumb-color: #79aea2;
     --sb-size: 14px;
+    background-color: #f2f4f8;
 }
   
 body::-webkit-scrollbar {
@@ -70,19 +71,20 @@ main {
     margin: 0 auto;
     max-width: 1440px;
     width:  100%;
+    /* background-color: #1e3a5f; */
 }
 
 .tab {
     overflow: hidden;
     border: 1px solid #ccc;
-    background-color: #f1f1f1;
+    background-color: transparent;
     width: fit-content;
     border-radius: 8px 8px 0 0;
     display: flex;
 }
 
 .tab button {
-    background-color: inherit;
+    background-color: #e6e9ef;
     float: left;
     border: none;
     outline: none;
@@ -90,15 +92,21 @@ main {
     padding: 14px 16px;
     transition: 0.3s ease;
     font-size: 16px;
+    color: #5a5a5a;
+    border-bottom: 3px solid transparent;
 }
 
 .tab button:hover {
-    background-color: #ddd;
+    background-color: #d6dbe3;
+    color: #1e3a5f;
 }
 
 .tab button.active {
-    background-color: #ccc;
+    background-color: #ffffff;
     font-weight: bold;
+    color: #1e3a5f;
+    border-bottom: 3px solid #f9b142;
+    box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.05);
 }
 
 .tabcontent {
@@ -107,6 +115,7 @@ main {
     border: 1px solid #ccc;
     border-radius: 0 8px 8px 8px;
     max-width: 1300px;
+    background-color: #f2f2f2;
 }
 
 .tabcontent.active {
@@ -125,8 +134,9 @@ main {
 }
 
 .tabcontent img:hover {
-    transform: scale(1.11);
+    transform: scale(1.08);
     cursor: pointer;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
 }
 
 /* Footer */
@@ -190,7 +200,7 @@ footer {
 .overlay {
     height: 100vh;
     width: 100%;
-    background-color: rgba(0, 0, 0, 0.8);
+    background-color: rgba(30, 58, 95, 0.92);
     position: fixed;
     top: 0;
     left: 0;
@@ -208,9 +218,11 @@ footer {
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: rgba(30, 30, 30, 0.7);
+    background-color: rgba(45, 36, 59, 0.85);
     padding: 100px 20px 20px 20px;
     border-radius: 8px;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .overlay-header {
@@ -224,17 +236,18 @@ footer {
 .close-btn {
     background: none;
     border: none;
-    color: white;
+    color: rgba(255, 255, 255, 0.8);
     font-size: 56px;
     cursor: pointer;
     padding: 0 8px;
-    transition: 0.2s ease;;
+    transition: 0.2s ease;
     opacity: 0.8;
 }
 
 .close-btn:hover {
     opacity: 1;
     transform: scale(1.2);
+    color: #f5396e;
 }
 
 .overlay-image {
@@ -254,30 +267,29 @@ footer {
 }
 
 .nav-btn {
-    background-color: transparent;
-    border: none;
+    background-color: rgba(30, 58, 95, 0.7);
+    border: 1px solid rgba(255, 255, 255, 0.3);
     color: white;
-    font-size: 24px;
     cursor: pointer;
-    padding: 10px 15px;
-    border-radius: 50%;
+    padding: 10px 20px;
+    border-radius: 6px;
     transition: all 0.2s ease;
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 40px;
+    min-width: 46px;
     height: 40px;
+}
+
+.nav-btn:hover {
+    background-color: #2c5f43;
+    border-color: rgba(255, 255, 255, 0.5);
 }
 
 .nav-btn img {
     width: 24px;
     height: 24px;
     filter: brightness(0) invert(1);
-}
-
-.nav-btn:hover {
-    background-color: rgba(255, 255, 255, 0.4);
-    transform: scale(1.1);
 }
 
 .image-counter {
@@ -288,6 +300,10 @@ footer {
     background-color: rgba(0, 0, 0, 0.4);
     padding: 5px 15px;
     border-radius: 20px;
+    background-color: rgba(30, 58, 95, 0.7);
+    padding: 5px 15px;
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 .d-none {
@@ -324,7 +340,6 @@ footer {
     .tabcontent img:hover {
         transform: scale(1.05);
     }
-    /* Alle Tabs */
     .tab button {
         position: relative;
         float: none;
