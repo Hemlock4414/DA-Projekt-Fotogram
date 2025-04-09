@@ -43,7 +43,7 @@ html, body {
     min-height: 100vh;
 }
 
-/* header */
+/* Header */
 
 header {
     background-color: rgb(8, 8, 161);
@@ -58,12 +58,18 @@ header {
     height: auto;
 }
 
-/* main */
+.header-logo:hover {
+    transform: scale(1.03);
+}
+
+/* Main */
 
 main {
     flex: 1; 
     padding: 50px 80px 50px 80px;
     margin: 0 auto;
+    max-width: 1440px;
+    width:  100%;
 }
 
 .tab {
@@ -103,7 +109,6 @@ main {
     max-width: 1300px;
 }
 
-/* Wenn der Tab aktiv ist, ändern wir auf flex mit Abständen */
 .tabcontent.active {
     display: flex;
     flex-wrap: wrap;
@@ -124,7 +129,7 @@ main {
     cursor: pointer;
 }
 
-/* footer */
+/* Footer */
 
 footer {
     margin-top: auto;
@@ -152,6 +157,11 @@ footer {
 .footer-logo {
     width: 200px;
     height: auto;
+    opacity: 0.9;
+}
+
+.footer-logo:hover {
+    opacity: 1;
 }
 
 .footer-right {
@@ -175,10 +185,12 @@ footer {
     background-color: white;
 }
 
+/* Overlay */
+
 .overlay {
     height: 100vh;
     width: 100%;
-    background-color: rgba(0, 0, 0, 0.8);
+    background-color: rgba(0, 0, 0, 0.85);
     position: fixed;
     top: 0;
     left: 0;
@@ -186,6 +198,7 @@ footer {
     justify-content: center;
     align-items: center;
     z-index: 1000;
+    backdrop-filter: blur(5px);
 }
 
 .overlay-content {
@@ -212,9 +225,16 @@ footer {
     background: none;
     border: none;
     color: white;
-    font-size: 48px;
+    font-size: 56px;
     cursor: pointer;
     padding: 0 8px;
+    transition: 0.2s ease;;
+    opacity: 0.8;
+}
+
+.close-btn:hover {
+    opacity: 1;
+    transform: scale(1.2);
 }
 
 .overlay-image {
@@ -249,6 +269,8 @@ footer {
 .image-counter {
     color: white;
     font-size: 24px;
+    font-weight: 500;
+    letter-spacing: 1px;
 }
 
 .d-none {
