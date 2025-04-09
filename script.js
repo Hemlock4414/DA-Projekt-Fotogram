@@ -48,7 +48,7 @@ let imagesAmphibians = [
 
 
 let currentImages = [];
-let currentDescriptions = [];
+// let currentDescriptions = [];
 
 function renderFiltered(event, index) {
 

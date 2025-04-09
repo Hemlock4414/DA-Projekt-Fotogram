@@ -43,7 +43,19 @@
         </div>
     </footer>
 
-    <div onclick="toggleOverlay()" id="overlay" class="overlay d-none"></div>
+    <div onclick="toggleOverlay()" id="overlay" class="overlay d-none">
+
+        <div class="overlay-header">
+            <button class="close-btn" onclick="toggleOverlay()">×</button>
+          </div>
+          <img class="overlay-image" src="${currentImages[imageIndex]}">
+          <div class="overlay-navigation">
+            <button class="nav-btn prev-btn" onclick="navigateImage(-1)">←</button>
+            <div class="image-counter">${imageIndex + 1} / ${currentImages.length}</div>
+            <button class="nav-btn next-btn" onclick="navigateImage(1)">→</button>
+        </div>
+
+    </div>
 
     <script src="script.js"></script>
     
