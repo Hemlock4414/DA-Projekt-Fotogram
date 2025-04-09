@@ -49,6 +49,7 @@ let imagesAmphibians = [
 
 let currentImages = [];
 // let currentDescriptions = [];
+let currentImageIndex = 0;
 
 function renderFiltered(event, index) {
 
@@ -96,16 +97,18 @@ function createImageTemplate(imageIndex) {
 
 function toggleOverlay() {
   let overlayRef = document.getElementById('overlay')
-
   overlayRef.classList.toggle('d-none')
 }
 
 function openOverlay(imageIndex) {
+  // Setze den aktuellen Bildindex
+  currentImageIndex = imageIndex;
+  
   // Hole das Overlay-Element
   let overlayRef = document.getElementById('overlay');
   
-  // Füge das große Bild zum Overlay hinzu, indem die neue Funktion aufgerufen wird
-  overlayRef.innerHTML = getOverlayTemplate(imageIndex);
+  // Füge das große Bild zum Overlay hinzu
+  overlayRef.innerHTML = getOverlayTemplate(currentImageIndex);
   
   // Zeige das Overlay an
   overlayRef.classList.remove('d-none');
@@ -114,12 +117,31 @@ function openOverlay(imageIndex) {
 function getOverlayTemplate(imageIndex) {
   return `
     <div class="overlay-content">
+      <div class="overlay-header" onclick="noPropagation(event)">
+        <button class="close-btn" onclick="toggleOverlay()">×</button>
+      </div>
       <img class="overlay-image" src="${currentImages[imageIndex]}">
+      <div class="overlay-navigation" onclick="noPropagation(event)">
+        <button class="nav-btn prev-btn" onclick="navigateImage(-1)">←</button>
+        <div class="image-counter">${imageIndex + 1} / ${currentImages.length}</div>
+        <button class="nav-btn next-btn" onclick="navigateImage(1)">→</button>
+      </div>
     </div>
   `;
 }
 
+function navigateImage(direction) {
+  // Berechne den neuen Index (mit Überprüfung der Grenzen)
+  currentImageIndex = (currentImageIndex + direction + currentImages.length) % currentImages.length;
+  
+  // Aktualisiere den Overlay-Inhalt
+  let overlayRef = document.getElementById('overlay');
+  overlayRef.innerHTML = getOverlayTemplate(currentImageIndex);
+}
 
+function noPropagation(event) {
+  event.stopPropagation();
+}
 
 
 
