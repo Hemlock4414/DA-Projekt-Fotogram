@@ -1,0 +1,275 @@
+bilder max 1280px ~300KB
+
+
+display: flex;
+flex-wrap: wrap;
+justify-content: center;
+
+kannst du mir bei einem webseiten-projekt helfen? ich erstelle eine seite mit bildern, eine art fotobuch. 
+es gibt tabs wo man wählen kann welche bilder man anzeigen lassen will. wenn man auf ein bild klickt wird es in gross angezeigt.
+
+eine frage dazu, bitte keinen code, sondern deine einschätzung. 
+
+main?	
+min-height: calc(100vh - (Header + Footer))px;
+overflow-y: auto;
+
+let images = [
+    "assets/img/img_1.jpg",
+    "assets/img/img_2.jpg",
+    "assets/img/img_3.jpg",
+    "assets/img/img_4.jpg",
+    "assets/img/img_5.jpg",
+];
+
+function renderImages() {
+    console.log("render images triggered");
+    let imageContainer = document.getElementById("images-container");
+    imageContainer.innerHTML = "";
+    for (let imageIndex = 0; imageIndex < images.length; imageIndex++) {
+        imageContainer.innerHTML += `<img onclick="openImage(${imageIndex})" src="${images[imageIndex]}">`;
+    }
+}
+
+function openImage(imageIndex) {
+    console.log(`open image trigger. Bild ${imageIndex + 1}`);
+}
+	
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Simple Basic Web Dev Tailwind</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js"></script>
+</head>
+
+<body onload="renderImages()" class="p-16">
+    <h1 class="text-4xl font-bold text-center">Fotogram</h1>
+    <section id="images-container">
+
+    </section>
+</body>
+
+</html>
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="shortcut icon" href="./Fotogramm images/favicon.png" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bitter:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+</head>
+
+<body onload="render()">
+    <header>
+        <img class="header_pic" src="./Fotogramm_images/Fotogram_Logo.svg" alt="">
+        Willkommen auf meiner Fotogramm Seite!
+    </header>
+    <div class="main_div">
+        <div id="content">
+
+        </div>
+    </div>
+
+    <div id="overlay" onclick="hideOverlay()" class="overlay_class d-none" >
+        <div id="show-something" onclick="showSomething()">Hallo</div>
+
+    </div>
+
+
+
+    <footer>
+        <a href="./Datenschutz.html">Datenschutz</a>|<a href="./Impressum.html">Impressum</a>
+    </footer>
+</body>
+<script src="script.js"></script>
+
+</html>
+
+function render() {
+    let contentRef = document.getElementById('content');
+
+    for (let i = 0; i < myImgs.length; i++) {
+        contentRef.innerHTML += getImgTemplate(i);
+    }
+}
+
+function getImgTemplate(i) {
+    return `<img src="./Fotogramm_images/${myImgs[i]}" onclick="showOverlay(${i})" id="img_cars_id" class="img_class" alt=""></img>`
+}
+
+function showOverlay(i){
+    let overlay = document.getElementById('overlay');
+    overlay.classList.remove('d-none')
+    overlay.innerHTML = `<img src="./Fotogramm_images/${myImgs[i]}" class="open-img" />`
+}
+
+function hideOverlay() {
+   let overlay = document.getElementById('overlay'); 
+    overlay.classList.add('d-none');
+}
+
+function showSomething() {
+    let show = document.getElementById('show-something');
+    show.innerHTML += ' Sedat';
+    event.stopPropagation();
+}
+-------------------------------------------
+
+function renderImagesOverlay() {
+  let contentRef = document.getElementById('tabcontent');
+  contentRef.innerHTML = "";
+  for (let index = 0 ; index < currentDescriptions.length; index++) {
+    contentRef.innerHTML += getNoteTemplate(index, currentDescriptions, currentImages);
+  }
+}
+
+
+🐾 Deutsch	🇬🇧 Englisch	🧬 Lateinischer Name
+
+Elefant		Elephant	Loxodonta africana
+Löwe		Lion		Panthera leo
+Hauskatze	Domestic cat	Felis catus
+Delfin		Dolphin		Delphinus delphis
+Adler		Eagle		Aquila chrysaetos
+Pinguin		Penguin		Aptenodytes forsteri
+Papagei		Parrot		Psittacus erithacus (Graupapagei)
+Eule		Owl		Bubo bubo (Uhu)
+Krokodil	Crocodile	Crocodylus niloticus
+Schlange	Snake		Serpentes (Überordnung)
+Königspython	Ball python	Python regius
+Eidechse	Lizard		Lacerta agilis (Zauneidechse)
+Zauneidechse	Sand lizard	Lacerta agilis
+Schildkröte	Turtle / Tortoise	Testudo hermanni (Griech. Landschildkröte)
+Aldabra-Riesenschildkröte	Aldabra giant tortoise		Aldabrachelys gigantea
+Grasfrosch	Common frog	Rana temporaria
+Axolotl		Axolotl		Ambystoma mexicanum
+Lurch/Feuersalamander	Fire salamander	Salamandra salamandra
+Roter Pfeilgiftfrosch		Strawberry poison dart frog	Oophaga pumilio
+Hai		Shark		Carcharodon carcharias (Weißer Hai)
+Goldfisch	Goldfish	Carassius auratus
+Lachs		Salmon		Salmo salar
+Clownfisch	Clownfish	Amphiprion ocellaris
+
+h2 Elefant
+h4 Afrikanischer Elefant (Loxodonta africana)
+h6 URL
+
+Elefant
+<a href="https://de.freepik.com/fotos-kostenlos/schoener-elefant-auf-einem-schotterweg-umgeben-von-gruenem-gras-und-baeumen_11502825.htm#fromView=search&page=1&position=6&uuid=5517b28d-10a2-4003-892f-bf785974ea6a&query=elefant">Bild von wirestock auf Freepik</a>
+
+Löwe
+<a href="https://de.freepik.com/fotos-kostenlos/nahaufnahme-eines-loewen-in-suedafrika_13460802.htm#fromView=search&page=4&position=0&uuid=e666c26e-e054-4255-bad1-e3e4c50372ba&query=l%C3%B6we">Bild von wirestock auf Freepik</a>
+
+Katze
+<a href="https://de.freepik.com/fotos-kostenlos/katze-die-auf-den-treppen-eines-gebaeudes-neben-einer-gruenen-pflanze-sitzt_13563022.htm#fromView=search&page=1&position=33&uuid=1bd33077-0cd0-4f78-a07c-8e2ba608069e&query=hauskatze">Bild von wirestock auf Freepik</a>
+katze 2
+Image by <a href="https://pixabay.com/users/terex12-25002902/?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=7564358">TEREX12</a> from <a href="https://pixabay.com//?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=7564358">Pixabay</a>
+katze3
+Image by <a href="https://pixabay.com/users/xiclography-7547621/?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=4541889">Urszula</a> from <a href="https://pixabay.com//?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=4541889">Pixabay</a>
+katze4
+Image by <a href="https://pixabay.com/users/neryx-2409337/?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=7828134">Jiri Plistil</a> from <a href="https://pixabay.com//?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=7828134">Pixabay</a>
+
+Delfin
+Image by <a href="https://pixabay.com/users/publicdomainimages-327722/?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=386744">PublicDomainImages</a> from <a href="https://pixabay.com//?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=386744">Pixabay</a>
+Deutsch: Großer Tümmler
+Englisch: Bottlenose dolphin
+Lateinisch: Tursiops truncatus
+
+Adler
+<a href="https://www.vecteezy.com/free-photos/bird-flying">Bird Flying Stock photos by Vecteezy</a>
+White-tailed eagle spreading wings
+
+Pinguin
+Foto von ArcticDesire.com Polarreisen: https://www.pexels.com/de-de/foto/eselspinguin-steht-auf-antarktischem-eis-31308009/
+pinguin2
+Foto von Andrey     Altergott: https://www.pexels.com/de-de/foto/vogel-tier-zoo-tierwelt-6739628/
+Deutsch: Königspinguin
+Englisch: King penguin
+Lateinisch: Aptenodytes patagonicus
+
+Graupapagei
+Foto von Magda Ehlers: https://www.pexels.com/de-de/foto/selektive-fokusfotografie-von-graupapagei-auf-zweig-1599529/
+papagei2
+Foto von Fabian Kessler: https://www.pexels.com/de-de/foto/natur-vogel-tierfotografie-tier-fotografie-20088538/
+
+eule Uhu
+Foto von NaturEye Conservation: https://www.pexels.com/de-de/foto/uhu-28270878/
+
+Krokodil
+Image by <a href="https://pixabay.com/users/xiserge-15871962/?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=7235628">xiSerge</a> from <a href="https://pixabay.com//?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=7235628">Pixabay</a>
+krokodil2
+<a href="https://www.vecteezy.com/free-photos/crocodile">Crocodile Stock photos by Vecteezy</a>
+
+schlange
+Foto von Giulia Botan: https://www.pexels.com/de-de/foto/nahaufnahme-einer-konigspython-auf-einem-ast-29378244/
+
+zauneidechse
+Image by <a href="https://pixabay.com/users/radfotosonn-8242629/?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=4833799">Gernot</a> from <a href="https://pixabay.com//?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=4833799">Pixabay</a>
+lizard2
+Image by <a href="https://pixabay.com/users/wolfgang_hasselmann-12114733/?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=6281757">Wolfgang_Hasselmann</a> from <a href="https://pixabay.com//?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=6281757">Pixabay</a>
+lizard3
+Image by <a href="https://pixabay.com/users/hansbenn-194001/?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=1427909">Hans Benn</a> from <a href="https://pixabay.com//?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=1427909">Pixabay</a>
+
+Schildkröte
+Image by <a href="https://pixabay.com/users/publicdomainpictures-14/?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=69752">PublicDomainPictures</a> from <a href="https://pixabay.com//?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=69752">Pixabay</a>
+
+grasfrosch
+Image by <a href="https://pixabay.com/users/runeuk-2283189/?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=3835942">Rudolf Neuberger</a> from <a href="https://pixabay.com//?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=3835942">Pixabay</a>
+frosch2
+Image by <a href="https://pixabay.com/users/kathy_büscher-5562794/?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=2382926">Kathy Büscher</a> from <a href="https://pixabay.com//?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=2382926">Pixabay</a>
+
+Kröte
+Foto von <a href="https://unsplash.com/de/@tumbao1949?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">James Wainscoat</a> auf <a href="https://unsplash.com/de/fotos/brauner-frosch-auf-grauem-felsen-QRuVDiPHXEQ?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>
+kröte 2 anaxyrus
+Foto von Mohan Nannapaneni: https://www.pexels.com/de-de/foto/tierfotografie-amphibie-krote-unscharfen-hintergrund-5977429/
+
+axolotl
+Foto von Raphael Brasileiro: https://www.pexels.com/de-de/foto/lila-violett-steine-baden-18145368/
+axolotl2
+Image by <a href="https://pixabay.com/users/ladamebucolique-4228283/?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=2193331">LaDameBucolique</a> from <a href="https://pixabay.com//?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=2193331">Pixabay</a>
+
+feuersalamander
+Foto von <a href="https://unsplash.com/de/@solaine?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">m c</a> auf <a href="https://unsplash.com/de/fotos/eine-gelb-schwarze-raupe-auf-dem-boden-PG-P7xrtT8c?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>
+feueralamander2
+Foto von Valentin Riess: https://www.pexels.com/de-de/foto/schwarze-und-gelbe-eidechse-106949/
+feuerslamander3
+<a href="https://www.vecteezy.com/free-photos/fire-salamander">Fire Salamander Stock photos by Vecteezy</a>
+
+giftfrosch
+<a href="https://www.vecteezy.com/free-photos/frog">Frog Stock photos by Vecteezy</a>
+giftfrosch2
+Foto von Enrique Hidalgo: https://www.pexels.com/de-de/foto/lebendiger-erdbeer-pfeilgiftfrosch-im-regenwald-von-costa-rica-30451236/
+giftfrosch3
+Foto von <a href="https://unsplash.com/de/@menaomar?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Omar Mena</a> auf <a href="https://unsplash.com/de/fotos/orangefarbener-und-schwarzer-frosch-auf-grunem-gras-69WNMCDwV0g?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>
+
+
+
+🦎 Axolotl (Ambystoma mexicanum)
+
+Typ: Amphibie
+
+Herkunft: Nur in Seen rund um Mexiko-Stadt, besonders im Xochimilco-See
+
+Besonderheit:
+Der Axolotl bleibt dauerhaft im Larvenstadium – er wird geschlechtsreif, ohne sich in ein erwachsenes Tier zu verwandeln. Dieses Phänomen nennt man Neotenie.
+
+Atmung: Über Kiemenbüschel, Haut und teilweise Lungen
+
+Regeneration: Kann Gliedmaßen, Teile des Herzens und sogar Gehirngewebe nachwachsen lassen – einzigartig unter Wirbeltieren
+
+Aussehen: Breiter Kopf, feine Kiemenfächern, oft rosa, weiß, grau oder schwarz
+
+Status: In freier Wildbahn stark bedroht, in Aquarien jedoch weit verbreitet
