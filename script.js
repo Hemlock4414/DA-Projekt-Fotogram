@@ -17,10 +17,6 @@ let imagesAll = [
   "./img/reptile_tortoise_1280.jpg"
 ];
 
-let descriptionsAll = [
-  "Elefant", "Afrikanischer Elefant (Loxodonta africana)", 
-]
-
 let imagesMammals = [
   "./img/mammal_elephant_1280.jpg",
   "./img/mammal_cat_1280.jpg",
@@ -49,10 +45,7 @@ let imagesAmphibians = [
   "./img/amphibian_axolotl_1280.jpg",
 ];
 
-
-
 let currentImages = [];
-// let currentDescriptions = [];
 let currentImageIndex = 0;
 
 function renderFiltered(event, index) {
