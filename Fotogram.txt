@@ -137,6 +137,31 @@ function renderImagesOverlay() {
 }
 
 
+Zusätzliche Wrapper-Ebene mit overflow visible
+
+Du kannst deine .tab-Leiste in ein zusätzliches <div class="tab-wrapper"> legen:
+
+<div class="tab-wrapper">
+  <div class="tab">...</div>
+</div>
+
+
+Und dann:
+
+.tab-wrapper {
+  overflow: visible;
+  position: relative;
+}
+
+.tab {
+  overflow: hidden;
+  border-radius: 8px 8px 0 0;
+}
+
+👉 So bleibt die .tab-Ecke intakt, aber der Tooltip kann trotzdem außerhalb der .tab sichtbar werden, weil er 
+innerhalb der Wrapper-Ebene sichtbar ist.
+
+
 🐾 Deutsch	🇬🇧 Englisch	🧬 Lateinischer Name
 
 Elefant		Elephant	Loxodonta africana
@@ -162,6 +187,14 @@ Hai		Shark		Carcharodon carcharias (Weißer Hai)
 Goldfisch	Goldfish	Carassius auratus
 Lachs		Salmon		Salmo salar
 Clownfisch	Clownfish	Amphiprion ocellaris
+
+Vorschlag für eine vielfältige Fisch-Liste:
+Deutsch		Englisch	Lateinisch
+Clownfisch	Clownfish	Amphiprion ocellaris
+Weißer Hai	Great white shark	Carcharodon carcharias
+Flussbarsch	European perch	Perca fluviatilis
+Quastenflosser	Coelacanth	Latimeria chalumnae
+
 
 h2 Elefant
 h4 Afrikanischer Elefant (Loxodonta africana)

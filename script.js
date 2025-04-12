@@ -48,6 +48,22 @@ let imagesAmphibians = [
 let currentImages = [];
 let currentImageIndex = 0;
 
+function renderImages() {
+  let imageTabContent = document.getElementById('tabcontent');
+  imageTabContent.innerHTML = "";
+
+    imageTabContent.style.display = "flex";
+    imageTabContent.classList.add("active");
+
+  for (let imageIndex = 0; imageIndex < currentImages.length; imageIndex++) {
+    imageTabContent.innerHTML += createImageTemplate(imageIndex);
+  }
+}
+
+function createImageTemplate(imageIndex) {
+  return  `<img onclick="openOverlay(${imageIndex})" src="${currentImages[imageIndex]}">`;
+}
+
 function renderFiltered(event, index) {
 
     let tablinks = document.getElementsByClassName("tablinks");
@@ -74,25 +90,10 @@ function renderFiltered(event, index) {
   renderImages();
 }
 
-function renderImages() {
-  let imageTabContent = document.getElementById('tabcontent');
-  imageTabContent.innerHTML = "";
-
-    imageTabContent.style.display = "flex";
-    imageTabContent.classList.add("active");
-
-  for (let imageIndex = 0; imageIndex < currentImages.length; imageIndex++) {
-    imageTabContent.innerHTML += createImageTemplate(imageIndex);
-  }
-}
-
-function createImageTemplate(imageIndex) {
-  return  `<img onclick="openOverlay(${imageIndex})" src="${currentImages[imageIndex]}">`;
-}
-
 function toggleOverlay() {
-  let overlayRef = document.getElementById('overlay')
-  overlayRef.classList.toggle('d-none')
+  let overlayRef = document.getElementById('overlay');
+  overlayRef.classList.toggle('d-none');
+  document.body.classList.toggle('no-scroll');
 }
 
 function openOverlay(imageIndex) {
@@ -104,6 +105,8 @@ function openOverlay(imageIndex) {
   overlayRef.innerHTML = getOverlayTemplate(currentImageIndex);
   
   overlayRef.classList.remove('d-none');
+
+  document.body.classList.add('no-scroll');
 }
 
 function getOverlayTemplate(imageIndex) {
