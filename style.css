@@ -19,7 +19,7 @@ body {
 
 body.no-scroll {
     overflow: hidden;
-  }
+}
   
 body::-webkit-scrollbar {
     width: var(--sb-size)
